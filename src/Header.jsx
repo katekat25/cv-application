@@ -1,8 +1,10 @@
 import { EditableTextBox } from "./EditableTextBox"
 import { EditableTextArea } from "./EditableTextArea.jsx"
+import { Icon } from "./Icon.jsx"
 
 function Header() {
     return <div className="header">
+        <Icon />
         <EditableTextBox type="text" value="Kate Schumacher" className="header-item"/>
         <EditableTextArea value="Professional Summary" className="header-item"/>
         <EditableTextBox type="text" value="katekat25.github.com" className="header-item"/>
