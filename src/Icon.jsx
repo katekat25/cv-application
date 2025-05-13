@@ -3,7 +3,7 @@ import ReactImageUploading from "react-images-uploading";
 
 function Icon() {
     const defaultImage = {
-        data_url: "/tangy.png", // Replace with your default image URL
+        data_url: "/tangy.png",
     };
 
     const [image, setImage] = useState([defaultImage]);
