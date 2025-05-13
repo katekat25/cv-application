@@ -2,6 +2,10 @@ textarea {
   resize: none;
 }
 
+input {
+  field-sizing: content;
+}
+
 .header {
   display: flex;
   flex-direction: column;

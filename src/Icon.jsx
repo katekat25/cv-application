@@ -34,7 +34,7 @@ function Icon() {
                         <img src={imageList[0]?.data_url} alt="" width="100" />
                         <div>
                             <button onClick={() => onImageUpdate(0)}>Replace</button>
-                            <button onClick={() => onImageRemove()}>Remove</button>
+                            <button onClick={() => onImageRemove(0)}>Remove</button>
                         </div>
                     </div>
                 )}
