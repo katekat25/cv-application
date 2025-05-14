@@ -23,7 +23,7 @@ function Education() {
         <h1>Education</h1>
         <div className="education-list">
             {segmentIds.map((id, index) => (
-                <div key={id}>
+                <div className="entries" key={id}>
                     <EducationSegment />
                     <button onClick={addDiv}>Add education</button>
                     <button onClick={() => removeDiv(index)} disabled={segmentIds.length === 1}>Remove education</button>
