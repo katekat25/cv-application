@@ -9,17 +9,15 @@ function EducationSegment() {
             <EditableInput type="text" value="2018-2022" className="education-item attended" />
         </div>
         <div className="tab">
-            <div className="descriptor">GPA:</div>
+            <div className="descriptor">GPA: </div>
             <EditableInput type="text" value="3.8" className="education-item gpa" />
         </div>
         <div className="tab">
-            <div className="descriptor">Achievements:</div>
-            <EditableInput type="text" value="The Awesome Award" className="education-item awards" />
+            <div className="descriptor">Achievements: </div>
+            <EditableInput type="text" value="The Awesome Award" className="education-item achievements" />
         </div>
-        <div className="tab">
-            <div className="descriptor">Relevant coursework:</div>
+            <div className="descriptor coursework-descriptor">Relevant coursework: </div>
             <EditableInput value="Humanities 101" multiline={true} className="education-item coursework" />
-        </div>
     </div>
 }
 

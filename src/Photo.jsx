@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactImageUploading from "react-images-uploading";
 
-function Icon() {
+function Photo() {
     const defaultImage = {
         data_url: "/tangy.png",
     };
@@ -44,4 +44,4 @@ function Icon() {
     </ReactImageUploading>
 }
 
-export { Icon }
+export { Photo }

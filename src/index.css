@@ -28,6 +28,8 @@ input {
 
 img {
   width: 150px;
+  height: 150px;
+  object-fit: cover;
 }
 
 .header {
@@ -63,6 +65,10 @@ img {
 .number,
 .address {
   border-top: 1px solid lightgray !important;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
 }
 
 .number,
@@ -114,6 +120,11 @@ img {
 
 .tab {
   display: flex;
+  align-items: center;
+}
+
+.coursework-descriptor {
+  margin-top: 10px;
 }
 
 .email,
@@ -121,17 +132,12 @@ img {
 .number,
 .address {
   text-align: center;
-  /* border: 1px solid blue;
 }
 
-.education-item {
-  /* float: left; */
-}
-
-.descriptor {
-  /* width: 200px; */
-  /* float: left; */
-  border: 1px solid red;
+.attended,
+.gpa,
+.achievements {
+  margin-left: 5px;
 }
 
 .unfocused {

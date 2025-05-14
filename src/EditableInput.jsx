@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function EditableInput({ value, className, type="text", multiline=false, ...rest }) {
+function EditableInput({ value, className, type = "text", multiline = false, ...rest }) {
     const [isFocused, setIsFocused] = useState(false);
     const [inputValue, setInputValue] = useState(value);
 
