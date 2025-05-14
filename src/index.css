@@ -1,7 +1,19 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.name,
+h1 {
+  font-family: "Unna", serif;
+}
+
+h1 {
+  font-weight: 500;
+}
+
 textarea {
   resize: none;
   text-align: justify;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
