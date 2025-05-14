@@ -1,11 +1,14 @@
 import { EducationSegment } from "./EducationSegment"
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 function Education() {
-    const [segmentIds, setSegmentIds] = useState([0]);
+    let idCount = useRef(0);
+    const [segmentIds, setSegmentIds] = useState([idCount]);
 
     const addDiv = () => {
-        setSegmentIds([...segmentIds, segmentIds.length]);
+        idCount.current++;
+        console.log("idCount is " + idCount.current);
+        setSegmentIds([...segmentIds, idCount.current]);
     }
 
     const removeDiv = (index) => {
@@ -19,6 +22,7 @@ function Education() {
         {segmentIds.map((id, index) => (
             <div key={id}>
                 <EducationSegment />
+                {console.log("ID: " + id)}
                 <button onClick={() => removeDiv(index)}>Remove education</button>
             </div>
         ))}
