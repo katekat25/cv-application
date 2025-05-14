@@ -21,13 +21,13 @@ function EditableInput({ value, className, type="text", multiline=false, ...rest
         ...rest,
     }
 
-    return <div>
+    return <>
         {multiline ? (
             <textarea {...sharedProps} />
         ) : (
             <input type={type} {...sharedProps} />
         )}
-    </div>
+    </>
 }
 
 export { EditableInput }

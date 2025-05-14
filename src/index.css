@@ -2,23 +2,67 @@ textarea {
   resize: none;
 }
 
+body {
+  width: 800px;
+  margin: auto;
+  margin-top: 10px;
+}
+
 input {
   field-sizing: content;
 }
 
-.header,
+.header {
+  border: 1px solid blue;
+  display: grid;
+  height: 200px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.image-upload {
+  grid-area: 1 / 1 / 4 / 2;
+}
+
+.name {
+  grid-area: 1 / 2 / 2 / 5;
+}
+
+.summary {
+  grid-area: 2 / 2 / 4 / 5;
+}
+
+.attended {
+  grid-area: 4 / 1 / 5 / 2;
+}
+
+.gpa {
+  grid-area: 4 / 2 / 5 / 3;
+}
+
+.awards {
+  grid-area: 4 / 3 / 5 / 4;
+}
+
+.coursework {
+  grid-area: 4 / 4 / 5 / 5;
+}
+
 .education {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid blue;
+  margin: auto;
+  width: 400px;
 }
 
-.header-item,
+/* .header-item,
 .education-item {
-  display: flex;
-  flex-direction: column;
   border: 1px solid red;
-}
+} */
 
 .unfocused {
   /* border: none; */

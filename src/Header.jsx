@@ -3,9 +3,9 @@ import { Icon } from "./Icon.jsx"
 
 function Header() {
     return <div className="header">
-        <Icon />
-        <EditableInput type="text" value="Kate Schumacher" className="header-item"/>
-        <EditableInput multiline={true} value="Professional Summary" className="header-item"/>
+        <Icon className="icon" />
+        <EditableInput type="text" value="Kate Schumacher" className="header-item name"/>
+        <EditableInput multiline={true} value="Professional Summary" className="header-item summary"/>
         <EditableInput type="text" value="katekat25.github.com" className="header-item"/>
         <EditableInput type="email" value="kate.schumacher@gmail.com" className="header-item"/>
         <EditableInput type="tel" value="(555) 555-5555" className="header-item"/>
