@@ -3,7 +3,7 @@ textarea {
 }
 
 body {
-  width: 800px;
+  width: 600px;
   margin: auto;
   margin-top: 10px;
 }
@@ -15,9 +15,8 @@ input {
 .header {
   border: 1px solid blue;
   display: grid;
-  height: 200px;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr) repeat(2, .75fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
@@ -34,20 +33,20 @@ input {
   grid-area: 2 / 2 / 4 / 5;
 }
 
-.attended {
-  grid-area: 4 / 1 / 5 / 2;
+.website {
+  grid-area: 4 / 1 / 5 / 3;
 }
 
-.gpa {
-  grid-area: 4 / 2 / 5 / 3;
+.email {
+  grid-area: 4 / 3 / 5 / 5;
 }
 
-.awards {
-  grid-area: 4 / 3 / 5 / 4;
+.number {
+  grid-area: 5 / 1 / 6 / 3;
 }
 
-.coursework {
-  grid-area: 4 / 4 / 5 / 5;
+.address {
+  grid-area: 5 / 3 / 6 / 5;
 }
 
 .education {
@@ -59,10 +58,12 @@ input {
   width: 400px;
 }
 
-/* .header-item,
-.education-item {
-  border: 1px solid red;
-} */
+.header-item {
+  min-width: 0;
+  word-wrap: wrap;
+  word-break: break-all;
+  border: 1px solid blue;
+}
 
 .unfocused {
   /* border: none; */
