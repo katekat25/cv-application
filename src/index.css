@@ -13,7 +13,7 @@ input {
 }
 
 .header {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr) repeat(2, .75fr);
@@ -49,20 +49,37 @@ input {
   grid-area: 5 / 3 / 6 / 5;
 }
 
+.container {
+  display: flex;
+  border: 2px solid green;
+}
+
 .education {
+  /* border: 1px solid blue; */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  border: 1px solid blue;
+  align-items: flex-start;
   margin: auto;
   width: 400px;
 }
 
+.tab {
+  display: flex;
+}
+
 .header-item {
-  min-width: 0;
-  word-wrap: wrap;
-  word-break: break-all;
-  border: 1px solid blue;
+  /* min-width: 0; */
+  /* border: 1px solid blue; */
+}
+
+.education-item {
+  /* float: left; */
+}
+
+.descriptor {
+  /* width: 200px; */
+  /* float: left; */
+  border: 1px solid red;
 }
 
 .unfocused {

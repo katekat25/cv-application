@@ -12,22 +12,26 @@ function Education() {
     }
 
     const removeDiv = (index) => {
-        if (segmentIds.length === 1) return;
+        if (segmentIds.length === 1) {
+            return;
+        }
         const newArray = [...segmentIds.slice(0, index), ...segmentIds.slice(index + 1)];
         setSegmentIds(newArray);
     }
 
-    return <div>
+    return <div className="container">
         <h1>Education</h1>
-        {segmentIds.map((id, index) => (
-            <div key={id}>
-                <EducationSegment />
-                {console.log("ID: " + id)}
-                <button onClick={() => removeDiv(index)}>Remove education</button>
-            </div>
-        ))}
-        <button onClick={addDiv}>Add education</button>
+        <div className="education-list">
+            {segmentIds.map((id, index) => (
+                <div key={id}>
+                    <EducationSegment />
+                    <button onClick={addDiv}>Add education</button>
+                    <button onClick={() => removeDiv(index)} disabled={segmentIds.length === 1}>Remove education</button>
+                </div>
+            ))}
+        </div>
     </div>
+
 }
 
 export { Education }
