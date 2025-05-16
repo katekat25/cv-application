@@ -7,7 +7,7 @@ function Header() {
     return <div className="header">
         <Photo className="photo" />
         <EditableInput type="text" value="Kate Schumacher" className="header-item name" />
-        <EditableInput multiline={true} value="Motivated and detail-oriented developer with a strong foundation in full-stack web development, gained through completing The Odin Project. Skilled in JavaScript, HTML, CSS, and backend technologies, with hands-on experience building responsive, user-focused applications. Brings extensive Japanese language proficiency (JLPT N2) and cross-cultural communication skills, with experience studying and working in Japanese-speaking environments." className="header-item summary" />
+        <EditableInput multiline={true} value="Motivated and detail-oriented developer with a strong foundation in full-stack web development, gained through completing The Odin Project. Skilled in JavaScript, HTML, CSS, and React, with hands-on experience building responsive, user-focused applications. Brings extensive Japanese language proficiency (JLPT N2) and cross-cultural communication skills, with experience studying and working in Japanese-speaking environments." className="header-item summary" />
         <div className="website">
             <Icon path={mdiLinkBoxOutline} size={1} />
             <EditableInput type="text" value="https://github.com/katekat25" className="header-item" />

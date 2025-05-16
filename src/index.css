@@ -36,13 +36,12 @@ img {
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
 }
 
 .header {
   /* border: 1px solid blue; */
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr) repeat(2, 30px);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
