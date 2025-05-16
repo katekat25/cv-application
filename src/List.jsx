@@ -3,9 +3,9 @@ import { useState } from "react"
 
 function List({ className }) {
     const [listItems, setListItems] = useState(
-        [{ content: "Example 1", id: crypto.randomUUID() },
-        { content: "Example 2", id: crypto.randomUUID() },
-        { content: "Example 3", id: crypto.randomUUID() }]
+        [{ content: "Click to edit", id: crypto.randomUUID() },
+        { content: "Click to edit", id: crypto.randomUUID() },
+        { content: "Click to edit", id: crypto.randomUUID() }]
     )
 
     const addLi = () => {

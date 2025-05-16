@@ -141,7 +141,7 @@ img {
   text-align: center;
 }
 
-.attended,
+.tab > .attended,
 .gpa,
 .achievements {
   margin-left: 5px;
