@@ -16,8 +16,8 @@ function EducationSegment() {
             <div className="descriptor">Achievements: </div>
             <EditableInput type="text" value="The Awesome Award" className="education-item achievements" />
         </div>
-            <div className="descriptor coursework-descriptor">Relevant coursework: </div>
-            <EditableInput value="Humanities 101" multiline={true} className="education-item coursework" />
+        <div className="descriptor coursework-descriptor">Relevant coursework: </div>
+        <EditableInput value="Humanities 101" multiline={true} className="education-item coursework" />
     </div>
 }
 

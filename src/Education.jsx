@@ -6,7 +6,6 @@ function Education() {
 
     const addDiv = () => {
         const newDiv = { content: <EducationSegment />, id: crypto.randomUUID() };
-        console.log("id is " + newDiv.id);
         setEntries([...entries, newDiv]);
     }
 

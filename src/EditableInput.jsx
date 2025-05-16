@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function EditableInput({ value, className, type = "text", multiline = false, isBullet = false, ...rest }) {
+function EditableInput({ value, className, type = "text", multiline = false, bullet = false, ...rest }) {
     const [isFocused, setIsFocused] = useState(false);
     const [inputValue, setInputValue] = useState(value);
 
@@ -18,20 +18,19 @@ function EditableInput({ value, className, type = "text", multiline = false, isB
         onBlur: handleBlur,
         onFocus: () => setIsFocused(true),
         className: isFocused ? className : `${className} unfocused`,
-        isBullet: isBullet,
         ...rest,
     }
 
     return <>
         {(() => {
-            if (isBullet) {
+            if (bullet) {
                 return <li>
                     <input type={type} {...sharedProps}></input>
                 </li>;
             } else if (multiline) {
                 return <textarea {...sharedProps} />;
             } else {
-                return <input type={type} {...sharedProps} />;
+                return <input type={type} {...sharedProps} ></input>;
             }
         })()}
     </>
