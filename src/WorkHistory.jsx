@@ -1,5 +1,9 @@
+import { WorkHistorySegment } from "./WorkHistorySegment"
+
 function WorkHistory() {
-    return <h1>Work History</h1>
+    return <>
+    <WorkHistorySegment />
+    </>
 }
 
 export { WorkHistory }

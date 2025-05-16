@@ -9,6 +9,7 @@ h1 {
 
 h1 {
   font-weight: 500;
+  margin-top: 0;
 }
 
 textarea {
@@ -30,6 +31,12 @@ img {
   width: 150px;
   height: 150px;
   object-fit: cover;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 
 .header {
@@ -113,7 +120,7 @@ img {
 }
 
 .place,
-.place-location {
+.location {
   text-transform: uppercase;
   font-weight: bold;
 }

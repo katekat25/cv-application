@@ -1,5 +1,5 @@
 function Skills() {
-    return <h1>Skills</h1>
+    return <></>
 }
 
 export { Skills }

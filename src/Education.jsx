@@ -1,32 +1,30 @@
 import { EducationSegment } from "./EducationSegment"
-import { useState, useRef } from "react"
+import { useState } from "react"
 
 function Education() {
-    let idCount = useRef(0);
-    const [segmentIds, setSegmentIds] = useState([idCount]);
+    const [entries, setEntries] = useState([{ id: crypto.randomUUID() }]);
 
     const addDiv = () => {
-        idCount.current++;
-        console.log("idCount is " + idCount.current);
-        setSegmentIds([...segmentIds, idCount.current]);
+        const newDiv = { content: <EducationSegment />, id: crypto.randomUUID() };
+        console.log("id is " + newDiv.id);
+        setEntries([...entries, newDiv]);
     }
 
-    const removeDiv = (index) => {
-        if (segmentIds.length === 1) {
+    const removeDiv = (id) => {
+        if (entries.length === 1) {
             return;
         }
-        const newArray = [...segmentIds.slice(0, index), ...segmentIds.slice(index + 1)];
-        setSegmentIds(newArray);
+        const newArray = entries.filter((entry) => entry.id !== id); //it's mutating entries, could that be a problem?
+        setEntries(newArray);
     }
 
     return <div className="container">
-        <h1>Education</h1>
         <div className="education-list">
-            {segmentIds.map((id, index) => (
-                <div className="entries" key={id}>
+            {entries.map((entry) => (
+                <div className="entries" key={entry.id}>
                     <EducationSegment />
                     <button onClick={addDiv}>Add education</button>
-                    <button onClick={() => removeDiv(index)} disabled={segmentIds.length === 1}>Remove education</button>
+                    <button onClick={() => removeDiv(entry.id)} disabled={entries.length === 1}>Remove education</button>
                 </div>
             ))}
         </div>

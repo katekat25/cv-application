@@ -1,9 +1,9 @@
 //todo:
 //add localstorage
 //add print function
+//consolidate education and work history components
 //css styling
-//make education, skills, and workhistory duplicable
-//icon upload?
+//add ability to toggle icon
 
 //dream todos:
 //add dark mode support
@@ -16,10 +16,15 @@ import { Skills } from "./Skills"
 
 function App() {
     return <>
-    <Header />
-    <Education />
-    <WorkHistory />
-    <Skills />
+        <Header />
+        <div className="grid">
+            <h1>Education</h1>
+            <Education />
+            <h1>Work History</h1>
+            <WorkHistory />
+            <h1>Skills</h1>
+            <Skills />
+        </div>
     </>
 }
 

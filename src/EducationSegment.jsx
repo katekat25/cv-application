@@ -3,7 +3,7 @@ import { EditableInput } from "./EditableInput"
 function EducationSegment() {
     return <div className="education">
         <EditableInput type="text" value="Washington University in St. Louis" className="education-item place" />
-        <EditableInput type="text" value="St. Louis, MO, USA" className="education-item place-location" />
+        <EditableInput type="text" value="St. Louis, MO, USA" className="education-item location" />
         <div className="tab">
             <div className="descriptor">Attended:</div>
             <EditableInput type="text" value="2018-2022" className="education-item attended" />
