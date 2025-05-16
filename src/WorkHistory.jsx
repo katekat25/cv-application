@@ -1,34 +1,14 @@
-import { WorkHistorySegment } from "./WorkHistorySegment"
-import { useState } from "react"
+import { EditableInput } from "./EditableInput"
+import { List } from "./List"
 
 function WorkHistory() {
-    const [entries, setEntries] = useState([{ id: crypto.randomUUID() }]);
-
-    const addDiv = () => {
-        const newDiv = { content: <WorkHistorySegment />, id: crypto.randomUUID() };
-        setEntries([...entries, newDiv]);
-    }
-
-    const removeDiv = (id) => {
-        if (entries.length === 1) {
-            return;
-        }
-        const newArray = entries.filter((entry) => entry.id !== id); //it's mutating entries, could that be a problem?
-        setEntries(newArray);
-    }
-
-    return <div className="container">
-        <div className="work-list">
-            {entries.map((entry) => (
-                <div className="entries" key={entry.id}>
-                    <WorkHistorySegment />
-                    <button onClick={addDiv}>Add work</button>
-                    <button onClick={() => removeDiv(entry.id)} disabled={entries.length === 1}>Remove work</button>
-                </div>
-            ))}
-        </div>
+    return <div className="education">
+        <EditableInput type="text" value="Jimmy John's" className="work-item place" />
+        <EditableInput type="text" value="St. Louis, MO, USA" className="work-item location" />
+        <EditableInput type="text" value="Sandiwch Artist" className="work-item position" />
+        <EditableInput type="text" value="2024-2025" className="work-item attended" />
+        <List />
     </div>
-
 }
 
 export { WorkHistory }

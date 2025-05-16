@@ -1,34 +1,24 @@
-import { EducationSegment } from "./EducationSegment"
-import { useState } from "react"
+import { EditableInput } from "./EditableInput"
 
 function Education() {
-    const [entries, setEntries] = useState([{ id: crypto.randomUUID() }]);
-
-    const addDiv = () => {
-        const newDiv = { content: <EducationSegment />, id: crypto.randomUUID() };
-        setEntries([...entries, newDiv]);
-    }
-
-    const removeDiv = (id) => {
-        if (entries.length === 1) {
-            return;
-        }
-        const newArray = entries.filter((entry) => entry.id !== id); //it's mutating entries, could that be a problem?
-        setEntries(newArray);
-    }
-
-    return <div className="container">
-        <div className="education-list">
-            {entries.map((entry) => (
-                <div className="entries" key={entry.id}>
-                    <EducationSegment />
-                    <button onClick={addDiv}>Add education</button>
-                    <button onClick={() => removeDiv(entry.id)} disabled={entries.length === 1}>Remove education</button>
-                </div>
-            ))}
+    return <div className="education">
+        <EditableInput type="text" value="Washington University in St. Louis" className="education-item place" />
+        <EditableInput type="text" value="St. Louis, MO, USA" className="education-item location" />
+        <div className="tab">
+            <div className="descriptor">Attended:</div>
+            <EditableInput type="text" value="2018-2022" className="education-item attended" />
         </div>
+        <div className="tab">
+            <div className="descriptor">GPA: </div>
+            <EditableInput type="text" value="3.8" className="education-item gpa" />
+        </div>
+        <div className="tab">
+            <div className="descriptor">Achievements: </div>
+            <EditableInput type="text" value="The Awesome Award" className="education-item achievements" />
+        </div>
+        <div className="descriptor coursework-descriptor">Relevant coursework: </div>
+        <EditableInput value="Humanities 101" multiline={true} className="education-item coursework" />
     </div>
-
 }
 
 export { Education }

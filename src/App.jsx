@@ -13,15 +13,28 @@ import { Header } from "./Header"
 import { Education } from "./Education"
 import { WorkHistory } from "./WorkHistory"
 import { Skills } from "./Skills"
+import { EntryList } from "./EntryList"
 
 function App() {
     return <>
         <Header />
         <div className="grid">
             <h1>Education</h1>
-            <Education />
+            <EntryList 
+                Component={Education}
+                addLabel="Add education"
+                removeLabel="Remove education"
+                containerClass="container"
+                listClass="education-list"
+            />
             <h1>Work History</h1>
-            <WorkHistory />
+            <EntryList 
+                Component={WorkHistory}
+                addLabel="Add position"
+                removeLabel="Remove position"
+                containerClass="container"
+                listClass="work-list"
+            />
             <h1>Skills</h1>
             <Skills />
         </div>
