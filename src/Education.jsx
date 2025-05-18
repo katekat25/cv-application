@@ -17,7 +17,10 @@ function Education() {
             <EditableInput type="text" value="The Awesome Award" className="education-item achievements" />
         </div>
         <div className="descriptor coursework-descriptor">Relevant coursework: </div>
-        <EditableInput value="Humanities 101" multiline={true} className="education-item coursework" />
+        <div className="grow-wrap">
+            <EditableInput value="Humanities 101" multiline={true} className="education-item coursework" onInput={(e) => {
+                e.target.parentNode.dataset.replicatedValue = e.target.value;}}/>
+        </div>
     </div>
 }
 

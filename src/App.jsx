@@ -1,8 +1,7 @@
 //todo:
 //add localstorage
 //add print function
-//add ability to toggle icon
-//add sidebar
+//add delete button to <li>s and other optional bits
 
 //dream todos:
 //add dark mode support
@@ -23,7 +22,7 @@ function App() {
         isVisible ? setIsVisible(false) : setIsVisible(true);
     }
 
-    return <div class="page">
+    return <div className="page">
         <Sidebar toggle={toggleVisibility} />
         <div className="cv-content">
             <Header iconVisibility={isVisible}/>

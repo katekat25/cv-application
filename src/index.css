@@ -12,8 +12,34 @@ h1 {
 }
 
 textarea {
-  resize: none;
   text-align: justify;
+}
+
+.grow-wrap {
+  display: grid;
+}
+
+.grow-wrap::after {
+  content: attr(data-replicated-value) " ";
+  white-space: pre-wrap;
+  visibility: hidden;
+}
+
+.grow-wrap > textarea {
+  resize: none;
+  overflow: hidden;
+}
+
+.grow-wrap > textarea,
+.grow-wrap::after {
+  padding: 0.5rem;
+  font: inherit;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 .page {
@@ -23,7 +49,7 @@ textarea {
 }
 
 .page h1 {
-  font-weight: 1000;
+  font-weight: 500;
   font-size: 2.5rem;
   margin-bottom: 0;
   padding: 0;
@@ -31,6 +57,7 @@ textarea {
 
 .page h2 {
   margin-top: 0;
+  font-weight: 300;
 }
 
 .sidebar {
@@ -43,6 +70,14 @@ textarea {
   flex-direction: column;
   height: 100%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  @media print {
+    display: none;
+  }
+}
+
+.sidebar > button {
+  width: fit-content;
 }
 
 .cv-content {
@@ -80,7 +115,11 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media print {
+    margin-bottom: 1rem;
+  }
 }
+
 .header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -94,7 +133,7 @@ textarea {
   grid-area: 1 / 2 / 2 / 5;
 }
 
-.summary {
+.grow-wrap {
   font-size: 0.75rem;
   margin-left: 10px;
   margin-right: 10px;
@@ -109,7 +148,7 @@ textarea {
   grid-area: 1 / 1 / 2 / 5;
 }
 
-.noicon > .summary {
+.noicon > .grow-wrap {
   grid-area: 2 / 1 / 4 / 5;
 }
 
@@ -119,7 +158,7 @@ textarea {
 .address {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   text-align: center;
   gap: 10px;
   border-top: 1px solid lightgray !important;
@@ -177,10 +216,25 @@ img {
   padding-bottom: 20px;
 }
 
+.education > .grow-wrap {
+  margin-left: 0;
+}
+
+.grow-wrap > .coursework {
+  padding-left: 0;
+  text-align: left;
+}
+
 .unfocused {
   border: none;
 }
 
 input {
   field-sizing: content;
+}
+
+button {
+  @media print {
+    display: none;
+  }
 }
