@@ -1,7 +1,7 @@
 import { EditableInput } from "./EditableInput"
 
 function Education() {
-    return <div className="education">
+    return <div className="segment">
         <EditableInput type="text" value="Washington University in St. Louis" className="education-item place" />
         <EditableInput type="text" value="St. Louis, MO, USA" className="education-item location" />
         <div className="tab">

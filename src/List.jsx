@@ -16,8 +16,17 @@ function List({ className }) {
         setListItems([...listItems, newItem]);
     };
 
-    const list = listItems.map((item) => (
-        <EditableInput key={item.id} value={item.content} bullet={true} className={className} />
+    const removeLi = (index) => {
+        const newList = [...listItems];
+        newList.splice(index, 1);
+        setListItems(newList);
+    }
+
+    const list = listItems.map((item, index) => (
+        <li key={item.id}>
+            <EditableInput value={item.content} bullet={false} className={className} />
+            <button onClick={() => removeLi(index)}>Remove entry</button>
+        </li>
     ));
 
     return <>

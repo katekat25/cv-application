@@ -2,7 +2,7 @@ import { EditableInput } from "./EditableInput"
 import { List } from "./List"
 
 function WorkHistory() {
-    return <div className="education">
+    return <div className="segment">
         <EditableInput type="text" value="Jimmy John's" className="work-item place" />
         <EditableInput type="text" value="St. Louis, MO, USA" className="work-item location" />
         <EditableInput type="text" value="Sandiwch Artist" className="work-item position" />
