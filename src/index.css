@@ -225,6 +225,10 @@ img {
   text-align: left;
 }
 
+input + button {
+  margin-left: 10px;
+}
+
 .unfocused {
   border: none;
 }

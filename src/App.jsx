@@ -1,7 +1,5 @@
 //todo:
 //add localstorage
-//add print function
-//add delete button to <li>s and other optional bits
 
 //dream todos:
 //add dark mode support
