@@ -1,8 +1,9 @@
-import { useState } from "react"
+import { useRef, useEffect, useState } from "react"
 
 function EditableInput({ value, className, type = "text", multiline = false, bullet = false, ...rest }) {
     const [isFocused, setIsFocused] = useState(false);
     const [inputValue, setInputValue] = useState(value);
+    const growWrapRef = useRef(null);
 
     const handleBlur = () => {
         setIsFocused(false);
@@ -10,7 +11,18 @@ function EditableInput({ value, className, type = "text", multiline = false, bul
 
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
+        if (multiline && growWrapRef.current) {
+            growWrapRef.current.dataset.replicatedValue = event.target.value;
+        }
     }
+
+    useEffect(() => {
+        if (multiline && growWrapRef.current) {
+            requestAnimationFrame(() => {
+                growWrapRef.current.dataset.replicatedValue = inputValue;
+            });
+        }
+    }, []);
 
     const sharedProps = {
         value: inputValue,
@@ -28,7 +40,11 @@ function EditableInput({ value, className, type = "text", multiline = false, bul
                     <input type={type} {...sharedProps}></input>
                 </li>;
             } else if (multiline) {
-                return <textarea {...sharedProps} />;
+                return (
+                    < div className="grow-wrap" ref={growWrapRef} >
+                        <textarea {...sharedProps} />
+                    </div >
+                );
             } else {
                 return <input type={type} {...sharedProps} ></input>;
             }
